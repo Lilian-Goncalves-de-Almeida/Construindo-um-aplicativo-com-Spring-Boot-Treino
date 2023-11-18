@@ -24,7 +24,7 @@ O objetivo deste projeto no git é fazer anotações do que foi aprendido em est
 - Maven 5.15.0
 
 
-## Documentação da API
+## Sobre a API
 
 Inicialmente foi usado o site [Spring Initializr](https://start.spring.io/) para criar um projeto Spring com a dependência web do framework.
 
@@ -51,37 +51,49 @@ Para saber a versão do Spring você será perguntado qual versão quer usar com
 	</parent>
 ```
 
+### Annotations usadas
+
 em andamento
-| Parâmetro   | Tipo       | 
+| Annotation   | O que faz   | 
 | :---------- | :--------- | 
-| `api_key` | `string` |
+| `@Test` | Indica que um método deve ser lido e compilado como um teste |
+| `@Autowired` | Indica que um método deve ser lido e compilado como um teste |
 
-### Retorna um item
 
-```http
-  GET /api/items/${id}
+### Funções usadas
+| Função   | O que faz  |
+| :---------- | :--------- |
+| `perform()`      | A... |
+
+
+
+## Métodos criados
+
+### Classe HelloControllerTest
+```java
+...
+    @Test
+    public void getHello() throws Exception{
+        this.mockMvc.perform(MockMvcRequestBuilders.get("/").accept(MediaType.APPLICATION_JSON)).andExpect(status().isOk()).andExpect(content().string(equalTo("Greetings from spring boot")));
+    }
+...
 ```
-
-| Parâmetro   | Tipo       | Descrição                                   |
-| :---------- | :--------- | :------------------------------------------ |
-| `id`      | `string` | **Obrigatório**. O ID do item que você quer |
-
-#### add(num1, num2)
-
-Recebe dois números e retorna a sua soma.
-
-
-## Uso/Exemplos
-
-```javascript
-import Component from 'my-project'
-
-function App() {
-  return <Component />
-}
+### Classe TesteapiApplication
+```java
+...
+	@Bean
+	public CommandLineRunner commandLineRunner(ApplicationContext ctx){
+		return args -> {
+			System.out.println("Let's see the beans names:");
+			String []  beanNames = ctx.getBeanDefinitionNames();
+			Arrays.sort(beanNames);
+			for (String b: beanNames) {
+				System.out.println(b);
+			}
+		};
+	}
+...
 ```
-
-
 
 ## Referências
 
