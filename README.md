@@ -54,16 +54,16 @@ Para saber a versão do Spring você será perguntado qual versão quer usar com
 ### Annotations usadas
 
 em andamento
-| Annotation   | O que faz   | 
+| Annotation   | O que faz   |
 | :---------- | :--------- | 
-| `@Test` | Indica que um método deve ser lido e compilado como um teste |
+| `@Test` | Indica que um método deve ser lido e compilado como um teste | 
 | `@Autowired` | Indica que um método deve ser lido e compilado como um teste |
 
 
 ### Funções usadas
-| Função   | O que faz  |
-| :---------- | :--------- |
-| `perform()`      | A... |
+| Função   | O que faz  | Biblioteca |
+| :---------- | :--------- | :--------- | 
+| `perform()`      | A... | Biblioteca |
 
 
 
